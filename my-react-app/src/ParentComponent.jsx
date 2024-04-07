@@ -4,6 +4,7 @@ export default function ParentComponent() {
             <ChildCmp1 />
             <ChildCmp2 />
             <ChildCmp3 />
+            <ChildCmp4 />
         </>
     );
 }
@@ -18,4 +19,10 @@ function ChildCmp2() {
 
 function ChildCmp3() {
     return <h1> child 3 </h1>
+}
+
+function ChildCmp4() {
+    const classNm = 'lower-class';
+    const textContent = 'Hello';
+    return <h1 className={classNm}>{textContent}</h1>
 }
