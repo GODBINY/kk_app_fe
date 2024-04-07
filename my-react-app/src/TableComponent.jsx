@@ -6,7 +6,7 @@ export default function TableComponent () {
     ]
     return (
         <>
-        <p>Rendering an Array Object in React</p>
+        <p>1. Rendering an Array Object in React - with key props from array object</p>
         <ul>{
            users.map(function(user){
                return (
@@ -14,6 +14,14 @@ export default function TableComponent () {
                )
            })
         }</ul>
+            <p>2. Renderina an Array Object in React - with key props from index</p>
+            <ul>{
+                users.map(function(user,index){
+                    return(
+                        <li key={index}> {user.name}&apos;s role is {user.role} </li>
+                    )
+                })
+            }</ul>
         </>
     )
 }
