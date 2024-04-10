@@ -14,7 +14,7 @@ export default function TableComponent () {
                )
            })
         }</ul>
-            <p>2. Renderina an Array Object in React - with key props from index</p>
+            <p>2. Rendering an Array Object in React - with key props from index</p>
             <ul>{
                 users.map(function(user,index){
                     return(
