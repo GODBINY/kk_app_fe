@@ -1,20 +1,21 @@
 .MainTemplate {
-  width: 512px;
-  margin0left: auto;
-  margin-right: auto;
-  margin-top: 6rem;
+  width: 100%;
+  margin-top: 2rem;
   border-radius: 4px;
   overflow: hidden;
+  text-align: center;
 }
 
 .app-title {
-  background: #22b8cf;
-  color: white;
-  height: 4rem;
+  display: inline-block;
+  background: #fff0f5;
+  color: black;
+  height: 3rem;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5px;
 }
 
 .content {

@@ -20,7 +20,8 @@ export default function ParentComponent() {
 function ChildCmp1(props) {
     const [bfName, setBfName] = useState('HK')
     return <>
-        <h1> my name is { props.name } and I am { props.age } years old. {props.child3()} my boyfriend&apos;s nickname is {bfName} </h1>
+        <h1> my name is { props.name } and I
+            am { props.age } years old. {props.child3()} my boyfriend&apos;s nickname is {bfName} </h1>
         <button onClick={() => setBfName('khk')}>change name(upper case to lower case)</button>
         </>
 }
