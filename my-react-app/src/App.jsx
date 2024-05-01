@@ -1,6 +1,6 @@
 import React from 'react';
 import MainTemplate from './components/MainTemplate.jsx';
-import './App.scss';
+import './App.css';
 
 class App extends React.Component {
 
