@@ -18,6 +18,24 @@
   margin-bottom: 5px;
 }
 
+.d-day-title {
+  display: inline-block;
+  background: lightskyblue;
+  height: auto;
+  font-size: 1.5rem;
+  display: flex;
+  border-radius: 10px;
+  margin-bottom:10px;
+}
+.d-day-content {
+  display: block;
+  margin:auto;
+}
+//
+//.person-img {
+//  height: 10
+//}
+
 .content {
   background: white;
 }
