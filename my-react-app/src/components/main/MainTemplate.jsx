@@ -11,38 +11,38 @@ const MainTemplate = () => {
                     <label htmlFor="hamburger1"></label>
 
                     <ul className="nav-links">
-                        <li><a href="#"><GoHeartFill /> 우리 만난지..</a></li>
-                        <li><a href="#"><GoHeartFill /> 우리의 일정</a></li>
-                        <li><a href="#"><GoHeartFill /> 우리의 버킷리스트</a></li>
-                        <li><a href="#"><GoHeartFill /> 우리의 금주 식단</a></li>
+                        <li><a href="#"><GoHeartFill className="list-of-heart"/>  우리 만난지..</a></li>
+                        <li><a href="#"><GoHeartFill className="list-of-heart"/>  우리의 일정</a></li>
+                        <li><a href="#"><GoHeartFill className="list-of-heart"/>  우리의 버킷리스트</a></li>
+                        <li><a href="#"><GoHeartFill className="list-of-heart"/>  우리의 금주 식단</a></li>
                     </ul>
                 </nav>
                 <div className="d-day-title">
                     <img
                         className="person-img"
-                        src="https://loremflickr.com/320/240?lock=1"
+                        src="./src/static/image/IMG_6725.JPG"
                     />
                     <div className="d-day-content">
-                        <div>뀽<GoHeartFill />콩</div>
+                        <div>뀽<GoHeartFill className="list-of-heart"/>콩</div>
                         <div>우리 만난지</div>
                         <div>D+502</div>
                     </div>
                     <img
                         className="person-img"
-                        src="https://loremflickr.com/320/240?lock=1"
+                        src="./src/static/image/IMG_8314.jpeg"
                     />
                 </div>
                 <div id="plans">
                     <div className="app-title">
-                        <GoHeartFill /> 우리의 일정 <GoHeartFill />
+                        <GoHeartFill className="list-of-heart"/> 우리의 일정
                     </div>
-                    <Calendar />
+                    <Calendar className="default-background"/>
                 </div>
                 <div id="buckets">
                     <div className="app-title">
-                        <GoHeartFill /> 우리의 버킷리스트 <GoHeartFill />
+                        <GoHeartFill className="list-of-heart"/> 우리의 버킷리스트
                     </div>
-                    <div className="d-day-content">
+                    <div className="normal-content">
                         <ul>
                             <li>눈오는 날 가로등 아래에서 뽀뽀하기</li>
                             <li>새해맞이 같이하기</li>
@@ -51,9 +51,9 @@ const MainTemplate = () => {
                 </div>
                 <div id="foodMenus">
                     <div className="app-title">
-                        <GoHeartFill /> 우리의 금주 식단 <GoHeartFill />
+                        <GoHeartFill className="list-of-heart"/> 우리의 금주 식단
                     </div>
-                    <div className="d-day-content">
+                    <div className="normal-content">
                         <ul>
                             <li>점보 오모리 김치찌개 라면</li>
                             <li>두릅무침</li>
