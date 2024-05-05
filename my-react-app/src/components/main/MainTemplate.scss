@@ -1,9 +1,9 @@
 .main-template {
   width: 100%;
-  height: 100%;
+  height: auto;
   padding: 0.1rem 0.5rem 0.1rem 0.5rem;
   border-radius: 4px;
-  overflow: hidden;
+  //overflow: hidden;
   text-align: center;
   margin-bottom: 5rem;
 }
@@ -66,7 +66,7 @@ $nav-links: about, products, media, contact us;
 html,
 body {
   font-family: 'Nunito', sans-serif;
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 
@@ -117,8 +117,8 @@ a {
 .content {
   //background: aliceblue;
   display: block;
-  height: 100%;
-  overflow: hidden;
+  height: auto;
+  //overflow: hidden;
   width: 100%;
   nav {
     background: #fff;

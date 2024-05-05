@@ -254,6 +254,7 @@ and (max-width: 768px) {
 }
 
 .root {
+    height: auto;
     display: inline-block;
     text-align: center;
 }
