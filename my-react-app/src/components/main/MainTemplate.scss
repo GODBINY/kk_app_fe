@@ -57,6 +57,11 @@
   background: #f3faff;
 }
 
+.calendar {
+  z-index: -1;
+  position: relative;
+}
+
 $nav-links: about, products, media, contact us;
 
 * {
@@ -128,6 +133,12 @@ a {
     top: 0px;
     margin-bottom: 10px;
   }
+  .setting-icon {
+    position: absolute;
+    top: 20%;
+    right: 0.5rem;
+    text-align: right;
+  }
   .nav-links {
     display: block;
     position: absolute;
@@ -137,7 +148,7 @@ a {
     list-style-type: none;
     padding: 0; /* 패딩 제거 */
     margin: 0; /* 마진 제거 */
-    z-index: 1;
+    z-index: 2;
     // Dark overlay on open nav
     &::before {
       background: rgba(0, 0, 0, .5);

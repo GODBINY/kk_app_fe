@@ -1,6 +1,7 @@
 import './MainTemplate.scss';
 import { Calendar } from 'antd-mobile';
 import { GoHeartFill } from "react-icons/go";
+import { DiAptana } from "react-icons/di";
 
 const MainTemplate = () => {
     return (
@@ -16,6 +17,7 @@ const MainTemplate = () => {
                         <li><a href="#"><GoHeartFill className="list-of-heart"/>  우리의 버킷리스트</a></li>
                         <li><a href="#"><GoHeartFill className="list-of-heart"/>  우리의 금주 식단</a></li>
                     </ul>
+                    <DiAptana className="setting-icon" size={35}/>
                 </nav>
                 <div className="d-day-title">
                     <img
@@ -36,7 +38,7 @@ const MainTemplate = () => {
                     <div className="app-title">
                         <GoHeartFill className="list-of-heart"/> 우리의 일정
                     </div>
-                    <Calendar className="default-background"/>
+                    <Calendar className="default-background calendar"/>
                 </div>
                 <div id="buckets">
                     <div className="app-title">
