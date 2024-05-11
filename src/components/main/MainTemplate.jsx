@@ -22,16 +22,16 @@ const MainTemplate = () => {
                 <div className="d-day-title">
                     <img
                         className="person-img"
-                        src="./src/static/image/IMG_6725.JPG"
+                        src="/assets/images/IMG_1747.png"
                     />
                     <div className="d-day-content">
                         <div>뀽<GoHeartFill className="list-of-heart"/>콩</div>
                         <div>우리 만난지</div>
-                        <div>D+502</div>
+                        <div>D+508</div>
                     </div>
                     <img
                         className="person-img"
-                        src="./src/static/image/IMG_8314.jpeg"
+                        src="/assets/images/IMG_8314.jpeg"
                     />
                 </div>
                 <div id="plans">
@@ -57,8 +57,8 @@ const MainTemplate = () => {
                     </div>
                     <div className="normal-content">
                         <ul>
-                            <li>점보 오모리 김치찌개 라면</li>
-                            <li>두릅무침</li>
+                            <li>유자 파스타 샐러드</li>
+                            <li>지.코.바</li>
                         </ul>
                     </div>
                 </div>
