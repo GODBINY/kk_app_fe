@@ -13,26 +13,28 @@
   //background: #fff0f5;
   color: black;
   height: 3rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: left;
-  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
-.list-of-heart {
-  margin: 0 0.5rem 0 1rem;
+.heart {
   color: #E74C3C;
+  margin: 0 0.5rem;
+  .list {
+    margin: 0 0.5rem 0 1rem;
+  }
 }
 
 .d-day-title {
   display: inline-block;
   background: #FDEDEC;
   height: auto;
-  font-size: 1.3rem;
+  font-size: 1rem;
   display: flex;
   border-radius: 10px;
-  margin-bottom:10px;
   align-items: center;
   justify-content: center;
 }
@@ -49,8 +51,7 @@
 .person-img {
   height: 80px;
   width: 80px;
-  margin-right: 30px;
-  margin-left: 30px;
+  margin: 5px 30px;
   border-radius: 100%;
   object-fit: cover;
 }
@@ -122,7 +123,6 @@ a {
 
 // Inner mobile canvas
 .content {
-  //background: aliceblue;
   display: block;
   height: auto;
   //overflow: hidden;
@@ -175,7 +175,7 @@ a {
         background: #fff;
         color: #404040;
         display: block;
-        font-size: 18px;
+        font-size: 1rem;
         font-weight: 700;
         padding: 12px 5px;
         text-align: left;
