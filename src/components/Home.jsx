@@ -3,7 +3,7 @@ import { Calendar } from 'antd-mobile';
 import { GoHeartFill } from "react-icons/go";
 import {calculateDday} from '../utils/caculateDday.jsx'
 
-const MainTemplate = () => {
+const Home = () => {
     let dDay = calculateDday();
     return (
         <div className="content">
@@ -55,4 +55,4 @@ const MainTemplate = () => {
 };
 
 
-export default MainTemplate;
+export default Home;
