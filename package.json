@@ -11,12 +11,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.3.6",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
     "@fontsource/roboto": "^5.0.12",
-    "antd": "^5.16.2",
-    "antd-mobile": "^5.35.0",
+    "@toast-ui/editor": "^3.2.2",
+    "@toast-ui/react-editor": "^3.2.3",
     "bootstrap": "^5.3.3",
     "express": "^4.19.2",
     "prop-types": "^15.8.1",

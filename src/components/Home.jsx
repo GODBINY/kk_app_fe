@@ -1,10 +1,16 @@
 import '../css/Home.scss'
-import { Calendar } from 'antd-mobile';
+import { Calendar, theme } from 'antd';
 import { GoHeartFill } from "react-icons/go";
 import {calculateDday} from '../utils/caculateDday.jsx'
 
 const Home = () => {
     let dDay = calculateDday();
+    const { token } = theme.useToken();
+    const wrapperStyle = {
+        width: 300,
+        border: `1px solid ${token.colorBorderSecondary}`,
+        borderRadius: token.borderRadiusLG,
+    };
     return (
         <div className="content">
             <div className="d-day-title">
@@ -22,11 +28,14 @@ const Home = () => {
                     src="/assets/images/IMG_8314.jpeg"
                 />
             </div>
-            <div id="plans">
+            <div id="plans" >
                 <div className="app-title">
                     <GoHeartFill className="heart list"/> 우리의 일정
                 </div>
-                <Calendar className="default-background calendar"/>
+                {/*<Calendar className="default-background calendar"/>*/}
+                <div style={wrapperStyle}>
+                    <Calendar fullscreen={false} onPanelChange={onPanelChange} />
+                </div>
             </div>
             <div id="buckets">
                 <div className="app-title">
@@ -52,6 +61,10 @@ const Home = () => {
             </div>
         </div>
     );
+};
+
+const onPanelChange = (value, mode) => {
+    console.log(value.format('YYYY-MM-DD'), mode);
 };
 
 
