@@ -1,9 +1,13 @@
 import '../css/Home.scss'
 import { GoHeartFill } from "react-icons/go";
 import {calculateDday} from '../utils/caculateDday.jsx'
+import Calendar from 'react-calendar';
+import '../css/Calendar.scss'
+
 
 const Home = () => {
     let dDay = calculateDday();
+    const formatDay = (locale, date) => date.getDate();
     return (
         <div className="content">
             <div className="d-day-title">
@@ -25,7 +29,11 @@ const Home = () => {
                 <div className="app-title">
                     <GoHeartFill className="heart list"/> 우리의 일정
                 </div>
-                    {/*<Calendar fullscreen={false} onPanelChange={onPanelChange} />*/}
+                <Calendar
+                    className="calendar"
+                    calendarType="gregory"
+                    formatDay={formatDay}
+                />
             </div>
             <div id="buckets">
                 <div className="app-title">
@@ -51,10 +59,6 @@ const Home = () => {
             </div>
         </div>
     );
-};
-
-const onPanelChange = (value, mode) => {
-    console.log(value.format('YYYY-MM-DD'), mode);
 };
 
 
