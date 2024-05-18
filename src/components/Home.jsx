@@ -1,16 +1,9 @@
 import '../css/Home.scss'
-import { Calendar, theme } from 'antd';
 import { GoHeartFill } from "react-icons/go";
 import {calculateDday} from '../utils/caculateDday.jsx'
 
 const Home = () => {
     let dDay = calculateDday();
-    const { token } = theme.useToken();
-    const wrapperStyle = {
-        width: 300,
-        border: `1px solid ${token.colorBorderSecondary}`,
-        borderRadius: token.borderRadiusLG,
-    };
     return (
         <div className="content">
             <div className="d-day-title">
@@ -32,10 +25,7 @@ const Home = () => {
                 <div className="app-title">
                     <GoHeartFill className="heart list"/> 우리의 일정
                 </div>
-                {/*<Calendar className="default-background calendar"/>*/}
-                <div style={wrapperStyle}>
-                    <Calendar fullscreen={false} onPanelChange={onPanelChange} />
-                </div>
+                    {/*<Calendar fullscreen={false} onPanelChange={onPanelChange} />*/}
             </div>
             <div id="buckets">
                 <div className="app-title">
