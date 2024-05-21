@@ -34,6 +34,10 @@ const Home = () => {
                     calendarType="gregory"
                     formatDay={formatDay}
                 />
+                <div className="normal-content">
+                    <span className="placeName">대전</span>
+                    <span>2024.05.17 ~ 2024.05.19</span>
+                </div>
             </div>
             <div id="buckets">
                 <div className="app-title">
