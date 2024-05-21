@@ -1,505 +1,181 @@
 @import url('node_modules/bootstrap/dist/css/bootstrap.css');
 
 *, *:before, *:after {
-    box-sizing: inherit;
-}
-html body {
-  width:100%;
-  height:100%;
+  box-sizing: inherit;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    margin: 0;
+html, body {
+  width: 100%;
+  height: auto;
+  font-family: 'Nunito', sans-serif;
+  overflow-x: hidden;  /* Prevent horizontal scrolling */
+  overflow-y: auto;    /* Allow vertical scrolling */
 }
 
-.navbar {
-    margin-bottom: 0;
-    border-radius: 0;
-    background-repeat: no-repeat;
-    background-size: 40px;
-    background-position: 10px;
-}
-
-@media only screen
-and (max-width: 768px) {
-    .navbar-header {
-        display: none;
-    }
-    .navbar {
-        background-image: none;
-    }
-}
-
-.navbar-default .navbar-brand {
-    color: white;
-    padding-left: 60px;
-}
-
-.navbar-default {
-    background-color: #194759;
-    border: none;
-}
-
-.navbar-brand {
-    font-weight: bold;
-}
-
-.navbar-form {
-    border: none;
-    box-shadow: none;
-}
-
-.navbar-form .form-control {
-    border: none;
-    border-radius: 4px;
-    box-shadow: none;
-}
-
-.navbar-form .btn-info {
-    background-color: #3E8C84;
-    border-color: #2B746B;
-}
-
-.navbar-form .btn-info:focus,
-.navbar-form .btn-info.focus {
-    background-color: #2B746B;
-    border-color: #286D64;
-}
-
-.main {
-    background: white;
-}
-
-/** Toolbar **/
-
-.interface {
-    display: flex;
-    background: #D8F2F0;
-}
-
-.toolbar {
-    background-color: #296B73;
-    min-width: 200px;
-    color: white;
-    font-size: 1.1em;
-    height: 100vh;
-    padding-top: 10px;
-}
-
-@media only screen
-and (max-width: 768px) {
-    .toolbar {
-        min-width: 55px;
-    }
-
-}
-
-.toolbar-item {
-    cursor: pointer;
-    padding: 10px 20px;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    user-select: none;
-}
-
-.toolbar-item:hover {
-    background-color: #133748;
-}
-
-.toolbar-item-button {
-    margin-right:10px;
-}
-
-@media only screen and (max-width: 768px) {
-    .toolbar-item-text {
-        display: none;
-    }
-
-    .toolbar-item-button {
-        font-size: 20px;
-    }
-}
-
-/**  Interface Styles **/
-
-.toolbar-addheading {
-    cursor: pointer;
-    -webkit-user-select: none;
-    user-select: none;          /* Likely future */
-}
-
-.appointments {
-    margin-top: 15px;
-}
-
-.appointments .appointments-headline {
-    margin-bottom: 10px;
-    color: #174152;
-}
-
-.item-list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    font-size: 1.5rem;
-    line-height: 120%;
-}
-
-.item-list .media {
-    margin-top: 0;
-}
-
-.item-list .pet-item {
-    padding: 10px;
-}
-
-.item-list .pet-item:nth-child(2n) {
-    background: rgba(255,255,255,.5);
-    border-radius: 5px;
-}
-
-.item-list .pet-item:last-child {
-    border-bottom: none;
-}
-
-.item-list .pet-item .pet-delete {
-    display: none;
-    opacity: 0;
-    transition: all 1s;
-}
-
-
-.item-list  .pet-item:hover .pet-delete {
-    display: block;
-    opacity: 1;
-}
-
-
-.item-list .pet-name {
-    font-weight: bold;
-    color: #296B73;
-    font-size: 1.3em;
-}
-.item-list .apt-notes {
-    font-style: italic;
-}
-
-.item-list .label-item {
-    font-weight: bold;
-    color: #D03B3B;
-    padding-right: 10px;
-}
-
-.item-list .apt-date {
-    font-style: italic;
-}
-
-#page-info {
-    background: transparent;
-    color: white;
-    display: flex;
-    flex-flow: row wrap;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    -webkit-app-region: drag;
-    -webkit-user-select: none;
-    cursor: pointer;
-}
-
-#page-info a:link {
-    color: #EEC856;
-}
-
-#page-info .info-content {
-    background: linear-gradient( 180deg,
-    rgba(234, 192, 59, .75),
-    rgba(24, 101, 85, .95));
-    width: 90%;
-    padding: 20px;
-    border-radius: 20px;
-    text-align: center;
-    align-self: center;
-    border: 2px solid rgba(24, 101, 85, .95);
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, .4);
-}
-
-#page-info .page-headline {
-    font-size: 1.8em;
-    color: #EEC856;
-}
-
-#page-info .close {
-    background: rgba(255,255,255,1);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 3px solid #1F7668;
-    font-size: 1em;
-    padding: 0;
-    position: relative;
-    left: -30px;
-    top: -30px;
-    z-index: 20;
-}
-
-#page-info .close:focus, #page-info .close:hover {
-    outline: none;
-}
-
-
-#page-info img {
-    width: 100px;
-    opacity: .8;
+body {
+  background: #404040;
 }
 
 #root {
-    z-index: -1;
-    height: auto;
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-    background-color: white;
-    position: absolute;
-}
-
-.app-title {
-    display: inline-block;
-//background: #fff0f5;
-    color: black;
-    height: 3rem;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-top: 5px;
-}
-
-.heart {
-    color: #E74C3C;
-    margin: 0 0.5rem;
-.list {
-    margin: 0 0.5rem 0 1rem;
-}
-}
-
-
-$nav-links: home, days, schedule, buckets, freeBoard;
-
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    font-family: 'Nunito', sans-serif;
-    height: auto;
-    width: 100%;
-}
-
-body {
-    background: #404040;
-    display: table;
+  background-color: white;
+  width: 100%;
+  height: 100%;
 }
 
 a {
-    text-decoration: none;
-    text-decoration-line: none !important;
+  text-decoration: none;
+  text-decoration-line: none !important;
 }
 
-// Mobile mockup design
-   .mobile-wrapper {
-       display: table-cell;
-       text-align: center;
-       vertical-align: middle;
-.mobile-container {
-    background: #fff;
-    border: 20px solid #666;
-    border-bottom-width: 80px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, .1);
-    display: inline-block;
-    height: 520px;
-    margin: 0 30px;
-    position: relative;
-    width: 320px;
-&::before {
-     background: #555;
-     border: 2px solid #4a4a4a;
-     border-radius: 50%;
-     bottom: -67px;
-     content: '';
-     display: block;
-     height: 50px;
-     left: 50%;
-     position: absolute;
-     width: 50px;
-     transform: translateX(-50%);
- //z-index: 1;
- }
-}
-}
-
-// Inner mobile canvas
-.root-wrap {
-  display: block;
-  height: 100%;
-  overflow: hidden;
-  width: 100%;
-nav {
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-    height: 55px;
-    position: sticky;
-    top: 0px;
-    margin-bottom: 10px;
-}
-.setting-icon {
-    position: absolute;
-    top: 20%;
-    right: 0.5rem;
-    text-align: right;
-}
 .nav-links {
-    display: block;
-    position: absolute;
-    top: 55px;
+  display: block;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+  &::before {
+    background: rgba(0, 0, 0, .5);
+    content: '';
+    height: 100vh;
     left: 0;
+    top: 0;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
     width: 100%;
-    list-style-type: none;
-    padding: 0; /* 패딩 제거 */
-    margin: 0; /* 마진 제거 */
-    z-index: 2;
-// Dark overlay on open nav
-    &::before {
-       background: rgba(0, 0, 0, .5);
-       content: '';
-       height: 100vh;
-       left: 0;
-       top: 0;
-       position: absolute;
-       opacity: 0;
-       visibility: hidden;
-       width: 100%;
-       transition: all .3s;
-   }
-li {
+    transition: all .3s;
+  }
+  li {
     background: white;
     border-bottom: 1px solid #ddd;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-20px);
     transition: all .3s;
-a {
-    background: #fff;
-    color: #404040;
-    display: block;
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 12px 5px;
-    text-align: left;
-    width: 100%;
-    transition: all .3s;
-&:hover {
-     color: #E74C3C;
- }
-}
-}
-}
+    a {
+      background: #fff;
+      color: #404040;
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 12px 5px;
+      text-align: left;
+      width: 100%;
+      transition: all .3s;
+      &:hover {
+        color: #E74C3C;
+      }
+    }
+  }
 }
 
-// Hidden checkbox to triger mobile nav
-   input[type="checkbox"] {
-       position: absolute;
-       opacity: 0;
-       visibility: hidden;
-// Nav open styling - achieved with ':checked' selector
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
   &:checked + label {
-     border: 4px solid silver;
-     border-radius: 50%;
-     height: 28px;
-     top: 16px;
-     left: 0.5rem;
-     width: 28px;
-     transform: rotate(-135deg);
-&::before {
-     background: silver;
-     top: 8px;
-     left: 4px;
-     width: 12px;
- }
-&::after {
-     background: silver;
-     opacity: 1;
-     top: 8px;
-     left: 4px;
-     visibility: visible;
-     width: 12px;
- }
-&:hover {
-     border-color: #E74C3C;
-&::before,
-&::after {
-     background: #E74C3C;
- }
+    border: 4px solid silver;
+    border-radius: 50%;
+    height: 28px;
+    top: 16px;
+    left: 0.5rem;
+    width: 28px;
+    transform: rotate(-135deg);
+    &::before {
+      background: silver;
+      top: 8px;
+      left: 4px;
+      width: 12px;
+    }
+    &::after {
+      background: silver;
+      opacity: 1;
+      top: 8px;
+      left: 4px;
+      visibility: visible;
+      width: 12px;
+    }
+    &:hover {
+      border-color: #E74C3C;
+      &::before,
+      &::after {
+        background: #E74C3C;
+      }
+    }
+  }
+  &:checked ~ .nav-links {
+    &::before {
+      opacity: 1;
+      visibility: visible;
+    }
+    li {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      transition-delay: 0.3s;
+    }
+  }
 }
-}
-&:checked ~ .nav-links {
-&::before {
-     opacity: 1;
-     visibility: visible;
- }
-li {
+
+label {
+  background: none transparent;
+  border: 4px solid #E74C3C;
+  border-left: 0 solid transparent;
+  border-right: 0 solid transparent;
+  cursor: pointer;
+  display: block;
+  height: 24px;
+  position: absolute;
+  top: 18px;
+  left: 0.5rem;
+  width: 24px;
+  transition: all .2s;
+  &::before {
+    background: #E74C3C;
+    content: '';
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 6px;
+    width: 24px;
+    transition: all .2s;
+  }
+  &::after {
+    background: #E74C3C;
+    content: '';
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 14px;  // Adjusted for equal spacing
     opacity: 1;
-    background: white;
     visibility: visible;
-    transform: translateY(0);
-
-@for $i from 1 through length($nav-links) {
-&:nth-child(#{$i}) {
-    transition-delay: ($i - 1)/10+s;
-}
-}
-}
-}
+    width: 24px;
+    transition: all .2s;
+  }
 }
 
-// Styling of the linked label element
-   label {
-       background: none transparent;
-       border: 4px solid #E74C3C;
-       border-left: 0 solid transparent;
-       border-right: 0 solid transparent;
-       cursor: pointer;
-       display: block;
-       height: 24px;
-       position: absolute;
-       top: 18px;
-       left: 0.5rem;
-       width: 24px;
-       transition: all .2s;
-&::before {
-     background: #E74C3C;
-     content: '';
-     height: 4px;
-     left: 0;
-     position: absolute;
-     top: 6px;
-     width: 24px;
-     transition: all .2s;
- }
-&::after {
-     background: #E74C3C;
-     content: '';
-     height: 4px;
-     left: 0;
-     position: absolute;
-     top: 6px;
-     opacity: 0;
-     visibility: hidden;
-     width: 100%;
-     transform: rotate(90deg);
-     transition: all .2s;
- }
+.setting-icon {
+  position: absolute;
+  top: 20%;
+  right: 0.5rem;
+  text-align: right;
+}
+
+.root-wrap {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  nav {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    height: 55px;
+    position: sticky;
+    top: 0px;
+    margin-bottom: 10px;
+  }
 }
