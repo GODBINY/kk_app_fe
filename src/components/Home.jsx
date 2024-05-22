@@ -39,14 +39,13 @@ const Home = () => {
                     <span>2024.05.17 ~ 2024.05.19</span>
                 </div>
             </div>
-            <div id="buckets">
+            <div>
                 <div className="app-title">
-                    <GoHeartFill className="heart list"/> 우리의 버킷리스트
+                    <GoHeartFill className="heart list"/> 공지
                 </div>
                 <div className="normal-content">
                     <ul>
-                        <li>눈오는 날 가로등 아래에서 뽀뽀하기</li>
-                        <li>새해맞이 같이하기</li>
+                        <li>집코바 냠냠</li>
                     </ul>
                 </div>
             </div>
@@ -56,8 +55,20 @@ const Home = () => {
                 </div>
                 <div className="normal-content">
                     <ul>
-                        <li>유자 파스타 샐러드</li>
-                        <li>지.코.바</li>
+                        <li>집코바 냠냠</li>
+                        <li>해물순두부찌개</li>
+                        <li>콩나물소면비빔국수</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="buckets">
+                <div className="app-title">
+                    <GoHeartFill className="heart list"/> 우리의 버킷리스트
+                </div>
+                <div className="normal-content">
+                    <ul>
+                        <li>눈오는 날 가로등 아래에서 뽀뽀하기</li>
+                        <li>새해맞이 같이하기</li>
                     </ul>
                 </div>
             </div>
