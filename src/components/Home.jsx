@@ -16,9 +16,9 @@ const Home = () => {
                     src="/assets/images/IMG_1747.png"
                 />
                 <div className="d-day-content">
-                    <div>뀽<GoHeartFill className="heart"/>콩</div>
-                    <div>우리 만난지</div>
-                    <div>D+{dDay}</div>
+                    <div className="d-day-text">뀽<GoHeartFill className="heart"/>콩</div>
+                    <div className="d-day-text">우리 만난지</div>
+                    <div className="d-day-text">D+{dDay}</div>
                 </div>
                 <img
                     className="person-img"
