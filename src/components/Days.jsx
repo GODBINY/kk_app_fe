@@ -14,10 +14,13 @@ const Days = () => {
                 <div>얼결해서 부부의날 실제로 꼭 챙기자?</div>
             </div>
             <div className="days-sub-area">
+                <div className="days-sub-content">
+                    <h2><GoHeartFill /> D+{dDay} <GoHeartFill /></h2>
+                </div>
                 {title.map((item,idx)=> {
                     return (
-                        <div key={idx}>
-                            <h2>{item}</h2>
+                        <div className="days-sub-content" key={idx}>
+                            <h2><GoHeartFill /> D+{item} <GoHeartFill /></h2>
                         </div>
                     )
                 })}
