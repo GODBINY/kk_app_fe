@@ -4,6 +4,10 @@ import {subtractDate} from './commonUtils.jsx';
 export const calculateDday = () => {
     const today = new Date();
     const startLoveDate = new Date('2022-12-20');
+
+    today.setHours(0, 0, 0, 0);
+    startLoveDate.setHours(0, 0, 0, 0);
+
     return subtractDate(today,startLoveDate) + 1
 }
 
