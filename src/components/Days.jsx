@@ -4,23 +4,55 @@ import {calculateDday} from '../utils/caculateDday.jsx'
 
 const Days = () => {
     let dDay = calculateDday();
-    const title = ['500', '400', '300']
+    const title = ['500', '400', '300', '200', '100']
+    const today = new Date().toLocaleDateString();
+
+    // 각 디데이를 더한 날짜를 계산하는 함수
+    const calculateFutureDate = (item) => {
+        // 기준일인 2022년 12월 20일
+        const startDate = new Date('2022-12-20');
+
+        // item일을 더한 날짜 계산
+        const futureDate = new Date(startDate.getTime());
+        futureDate.setDate(startDate.getDate() + Number(item));
+
+        // 계산된 날짜를 문자열로 반환
+        return futureDate.toLocaleDateString();
+    };
+
     return (
         <div className="days-content">
             <div className="days-main-area">
-                <div>뀽이랑 <GoHeartFill />콩이랑 만난지 {dDay}일이 되었어요!</div>
-                <div>우리뀽이 내가 인스타 글 남겨두었으니 꼭 봐요 힝</div>
-                <div>너무 많이많이 사랑하구</div>
-                <div>얼결해서 부부의날 실제로 꼭 챙기자?</div>
+                <img
+                    className="days-background-img"
+                    src="/assets/images/days_background_img.jpeg"
+                />
+                <div className="overlay">
+                    <div className="next-d-day">
+                        <div>600일까지 76일 남음</div>
+                        <div>2024.08.10(토)</div>
+                    </div>
+                </div>
             </div>
             <div className="days-sub-area">
-                <div className="days-sub-content">
-                    <h2><GoHeartFill /> D+{dDay} <GoHeartFill /></h2>
+                <div className="days-sub-content" style={{ backgroundColor: getRandomPastelColor() }}>
+                    <GoHeartFill className="heart"/>
+                    <div className="d-day-area">
+                        <div>D+{dDay}</div>
+                        <div>{today}</div>
+                    </div>
+                    <GoHeartFill className="heart"/>
                 </div>
                 {title.map((item,idx)=> {
+                    const pastDate = calculateFutureDate(Number(item));
                     return (
-                        <div className="days-sub-content" key={idx}>
-                            <h2><GoHeartFill /> D+{item} <GoHeartFill /></h2>
+                        <div className="days-sub-content" style={{ backgroundColor: getRandomPastelColor() }} key={idx}>
+                            <GoHeartFill className="heart"/>
+                            <div className="d-day-area">
+                                <div>D+{item}</div>
+                                <div>{pastDate}</div>
+                            </div>
+                            <GoHeartFill className="heart"/>
                         </div>
                     )
                 })}
@@ -29,5 +61,12 @@ const Days = () => {
     );
 };
 
+// 랜덤 파스텔 색상을 생성하는 함수
+const getRandomPastelColor = () => {
+    const r = Math.floor((Math.random() * 25) + 230);
+    const g = Math.floor((Math.random() * 25) + 230);
+    const b = Math.floor((Math.random() * 25) + 230);
+    return `rgb(${r},${g},${b})`;
+};
 
 export default Days;

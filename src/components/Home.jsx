@@ -1,5 +1,7 @@
 import '../css/Home.scss'
 import { GoHeartFill } from "react-icons/go";
+import { MdOutlineCheckBox } from "react-icons/md";
+import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import {calculateDday} from '../utils/caculateDday.jsx'
 import Calendar from 'react-calendar';
 import '../css/Calendar.scss'
@@ -36,7 +38,7 @@ const Home = () => {
                 />
                 <div className="normal-content">
                     <span className="placeName">대전</span>
-                    <span>2024.05.17 ~ 2024.05.19</span>
+                    <span>2024.05.31 ~ 2024.06.02</span>
                 </div>
             </div>
             <div>
@@ -45,7 +47,7 @@ const Home = () => {
                 </div>
                 <div className="normal-content">
                     <ul>
-                        <li>집코바 냠냠</li>
+                        <li>대전 한빛탑광장 한우축제 가고싶다 힝</li>
                     </ul>
                 </div>
             </div>
@@ -55,9 +57,8 @@ const Home = () => {
                 </div>
                 <div className="normal-content">
                     <ul>
-                        <li>집코바 냠냠</li>
-                        <li>해물순두부찌개</li>
-                        <li>콩나물소면비빔국수</li>
+                        <li>서브웨이 힝.. 다이어트 해야해</li>
+                        <li>나머지는 미정이야 힝</li>
                     </ul>
                 </div>
             </div>
@@ -66,10 +67,10 @@ const Home = () => {
                     <GoHeartFill className="heart list"/> 우리의 버킷리스트
                 </div>
                 <div className="normal-content">
-                    <ul>
-                        <li>눈오는 날 가로등 아래에서 뽀뽀하기</li>
-                        <li>새해맞이 같이하기</li>
-                    </ul>
+                    <div className="check-lists">
+                        <div><MdOutlineCheckBox /> 휴게소에서 알감자 사먹기</div>
+                        <div><MdOutlineCheckBoxOutlineBlank /> 가마치 통닭 바깥에서 치킨이랑 술마시기</div>
+                    </div>
                 </div>
             </div>
         </div>
