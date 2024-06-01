@@ -44,7 +44,7 @@ const Days = () => {
                     <GoHeartFill className="heart"/>
                 </div>
                 {title.map((item,idx)=> {
-                    const pastDate = calculateFutureDate(Number(item));
+                    const pastDate = calculateFutureDate(Number( item));
                     return (
                         <div className="days-sub-content" style={{ backgroundColor: getRandomPastelColor() }} key={idx}>
                             <GoHeartFill className="heart"/>
