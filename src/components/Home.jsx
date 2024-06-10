@@ -3,13 +3,31 @@ import { GoHeartFill } from "react-icons/go";
 import { MdOutlineCheckBox } from "react-icons/md";
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import {calculateDday} from '../utils/caculateDday.jsx'
+import {changeTomillisecond, stringToDate} from '../utils/commonUtils.jsx'
 import Calendar from 'react-calendar';
 import '../css/Calendar.scss'
 
 
 const Home = () => {
     let dDay = calculateDday();
+    let selectedDateList = [];
+    let datingDayList = [
+        {placeName: '대전', startDate: '2024-05-17', endDate: '2024-05-19'},
+        {placeName: '성남', startDate: '2024-05-24', endDate: '2024-05-26'},
+        {placeName: '대전', startDate: '2024-05-31', endDate: '2024-06-02'},
+        {placeName: '대전', startDate: '2024-06-06', endDate: '2024-06-07'},
+    ]
     const formatDay = (locale, date) => date.getDate();
+    const clickCalendar = (value) => {
+        selectedDateList = [];
+        selectedDateList = datingDayList.filter((item)=>{
+            if(changeTomillisecond(stringToDate(item.startDate)) <= changeTomillisecond(value)
+            && changeTomillisecond(stringToDate(item.endDate)) >= changeTomillisecond(value)) {
+                return item
+            }
+        })
+        console.log(selectedDateList)
+    }
     return (
         <div className="content">
             <div className="d-day-title">
@@ -35,11 +53,16 @@ const Home = () => {
                     className="calendar"
                     calendarType="gregory"
                     formatDay={formatDay}
+                    onClickDay={clickCalendar}
                 />
-                <div className="normal-content">
-                    <span className="placeName">대전</span>
-                    <span>2024.05.31 ~ 2024.06.02</span>
-                </div>
+                {selectedDateList.map((item, idx)=>{
+                    return (
+                        <div className="normal-content"  key={idx}>
+                            <span className="place-name main-city-1">{item.placeName}</span>
+                            <span>{item.startDate} ~ {item.endDate}</span>
+                        </div>
+                    )
+                })}
             </div>
             <div>
                 <div className="app-title">

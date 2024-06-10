@@ -15,12 +15,15 @@ function App() {
     //     console.log(e.target.value)
     //     setMenuChecked(!e.target.value)
     // }
+    let checkedHandler = (value) => {
+        console.log(value)
+    }
 
     return (
             <div className="root-wrap">
                 <nav>
                     <input type="checkbox" id="hamburger1" />
-                    <label htmlFor="hamburger1"> </label>
+                    <label htmlFor="hamburger1" onClick={checkedHandler}> </label>
                     <ul className="nav-links">
                         <li><a href="/"><GoHeartFill className="heart list" />  홈</a></li>
                         <li><a href="/Days"><GoHeartFill className="heart list" />  우리 만난지..</a></li>

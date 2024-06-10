@@ -221,13 +221,19 @@ label {
   }
 }
 
-.placeName {
+.place-name {
   display: inline-block;
-  background-color: #0a53be;
-  border-color: blue;
   color: white;
   border-radius: 20%;
   padding: 2px 5px;
-  margin-right: 10px;
+  margin: 0px 10px;
   font-size: 0.8rem;
+}
+.main-city-1 {
+  border-color: blue;
+  background-color: #0a53be;
+}
+.main-city-2{
+  border-color: pink;
+  background-color: #0a53be;
 }
