@@ -33,72 +33,67 @@ const Home = () => {
     };
 
     return (
-        <div className="content">
-            <div className="d-day-title">
+        <div className="content no-select">
+            <div className="d-day-title no-select">
                 <img
-                    className="person-img"
+                    className="person-img no-select"
                     src="/assets/images/IMG_1747.png"
                 />
-                <div className="d-day-content">
-                    <div className="d-day-text">뀽<GoHeartFill className="heart"/>콩</div>
+                <div className="d-day-content no-select">
+                    <div className="d-day-text">뀽<GoHeartFill className="heart" />콩</div>
                     <div className="d-day-text">우리 만난지</div>
                     <div className="d-day-text">D+{dDay}</div>
                 </div>
                 <img
-                    className="person-img"
+                    className="person-img no-select"
                     src="/assets/images/IMG_8314.jpeg"
                 />
             </div>
-            <div id="plans" >
-                <div className="app-title">
-                    <GoHeartFill className="heart list"/> 우리의 일정
+            <div id="plans" className="no-select">
+                <div className="app-title no-select">
+                    <GoHeartFill className="heart list" /> 우리의 일정
                 </div>
                 <Calendar
-                    className="calendar"
+                    className="calendar no-select"
                     calendarType="gregory"
                     formatDay={formatDay}
                     onClickDay={clickCalendar}
                 />
                 {selectedDateList.map((item, idx) => (
-                    <div className="normal-content" key={idx}>
+                    <div className="normal-content no-select" key={idx}>
                         <span className="place-name main-city-1">{item.placeName}</span>
                         <span>{item.startDate} ~ {item.endDate}</span>
                     </div>
                 ))}
             </div>
-            <div>
-                <div className="app-title">
-                    <GoHeartFill className="heart list"/> 공지
+            <div className="no-select">
+                <div className="app-title no-select">
+                    <GoHeartFill className="heart list" /> 공지
                 </div>
-                <div className="normal-content">
+                <div className="normal-content no-select">
                     <ul>
-                        <li>우리뀽이랑 야시장 및 서울 구경 하고싶어</li>
-                        <li>우리뀽이랑 코스트코 가서 장보고싶어</li>
-                        <li>우리뀽이랑 일반 장이라도 보고싶어</li>
+                        <li>대전 한빛탑광장 한우축제 가고싶다 힝</li>
                     </ul>
                 </div>
             </div>
-            <div id="foodMenus">
-                <div className="app-title">
-                    <GoHeartFill className="heart list"/> 우리의 금주 식단
+            <div id="foodMenus" className="no-select">
+                <div className="app-title no-select">
+                    <GoHeartFill className="heart list" /> 우리의 금주 식단
                 </div>
-                <div className="normal-content">
+                <div className="normal-content no-select">
                     <ul>
-                        <li>눅눅~한 고추 누누눅</li>
-                        <li>소바나 히야시츄카 고민중이야</li>
-                        <li>쟈가아리고, 도쿄바나나 등 일본과자도 먹자 힝</li>
+                        <li>서브웨이 힝.. 다이어트 해야해</li>
                         <li>나머지는 미정이야 힝</li>
                     </ul>
                 </div>
             </div>
-            <div id="buckets">
-                <div className="app-title">
-                    <GoHeartFill className="heart list"/> 우리의 버킷리스트
+            <div id="buckets" className="no-select">
+                <div className="app-title no-select">
+                    <GoHeartFill className="heart list" /> 우리의 버킷리스트
                 </div>
-                <div className="normal-content">
-                    <div className="check-lists">
+                <div className="normal-content no-select">
+                    <div className="check-lists no-select">
                         <div><MdOutlineCheckBox /> 휴게소에서 알감자 사먹기</div>
-                        <div><MdOutlineCheckBoxOutlineBlank /> 쟈가아리고 해먹기</div>
                         <div><MdOutlineCheckBoxOutlineBlank /> 가마치 통닭 바깥에서 치킨이랑 술마시기</div>
                     </div>
                 </div>
