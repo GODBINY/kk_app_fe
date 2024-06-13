@@ -16,6 +16,7 @@ const Home = () => {
         {placeName: '성남', startDate: '2024-05-24', endDate: '2024-05-26'},
         {placeName: '대전', startDate: '2024-05-31', endDate: '2024-06-02'},
         {placeName: '대전', startDate: '2024-06-06', endDate: '2024-06-07'},
+        {placeName: '성남', startDate: '2024-06-14', endDate: '2024-06-16'},
     ];
 
     const formatDay = (locale, date) => date.getDate();
@@ -71,7 +72,9 @@ const Home = () => {
                 </div>
                 <div className="normal-content">
                     <ul>
-                        <li>대전 한빛탑광장 한우축제 가고싶다 힝</li>
+                        <li>우리뀽이랑 야시장 및 서울 구경 하고싶어</li>
+                        <li>우리뀽이랑 코스트코 가서 장보고싶어</li>
+                        <li>우리뀽이랑 일반 장이라도 보고싶어</li>
                     </ul>
                 </div>
             </div>
@@ -81,7 +84,9 @@ const Home = () => {
                 </div>
                 <div className="normal-content">
                     <ul>
-                        <li>서브웨이 힝.. 다이어트 해야해</li>
+                        <li>눅눅~한 고추 누누눅</li>
+                        <li>소바나 히야시츄카 고민중이야</li>
+                        <li>쟈가아리고, 도쿄바나나 등 일본과자도 먹자 힝</li>
                         <li>나머지는 미정이야 힝</li>
                     </ul>
                 </div>
@@ -93,6 +98,7 @@ const Home = () => {
                 <div className="normal-content">
                     <div className="check-lists">
                         <div><MdOutlineCheckBox /> 휴게소에서 알감자 사먹기</div>
+                        <div><MdOutlineCheckBoxOutlineBlank /> 쟈가아리고 해먹기</div>
                         <div><MdOutlineCheckBoxOutlineBlank /> 가마치 통닭 바깥에서 치킨이랑 술마시기</div>
                     </div>
                 </div>
