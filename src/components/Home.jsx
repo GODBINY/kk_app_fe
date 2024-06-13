@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { GoHeartFill } from "react-icons/go";
 import { MdOutlineCheckBox } from "react-icons/md";
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
-import {calculateDday} from '../utils/caculateDday.jsx'
-import {changeTomillisecond, stringToDate} from '../utils/commonUtils.jsx'
+import { calculateDday } from '../utils/caculateDday.jsx'
+import { changeTomillisecond, stringToDate } from '../utils/commonUtils.jsx'
 import Calendar from 'react-calendar';
 import '../css/Calendar.scss'
 
@@ -12,11 +12,11 @@ const Home = () => {
     let dDay = calculateDday();
     const [selectedDateList, setSelectedDateList] = useState([]);
     let datingDayList = [
-        {placeName: '대전', startDate: '2024-05-17', endDate: '2024-05-19'},
-        {placeName: '성남', startDate: '2024-05-24', endDate: '2024-05-26'},
-        {placeName: '대전', startDate: '2024-05-31', endDate: '2024-06-02'},
-        {placeName: '대전', startDate: '2024-06-06', endDate: '2024-06-07'},
-        {placeName: '성남', startDate: '2024-06-14', endDate: '2024-06-16'},
+        { placeCode: 1, placeName: '대전', startDate: '2024-05-17', endDate: '2024-05-19' },
+        { placeCode: 2, placeName: '성남', startDate: '2024-05-24', endDate: '2024-05-26' },
+        { placeCode: 1, placeName: '대전', startDate: '2024-05-31', endDate: '2024-06-02' },
+        { placeCode: 1, placeName: '대전', startDate: '2024-06-06', endDate: '2024-06-07' },
+        { placeCode: 2, placeName: '성남', startDate: '2024-06-14', endDate: '2024-06-16' },
     ];
 
     const formatDay = (locale, date) => date.getDate();
@@ -61,7 +61,7 @@ const Home = () => {
                 />
                 {selectedDateList.map((item, idx) => (
                     <div className="normal-content no-select" key={idx}>
-                        <span className="place-name main-city-1">{item.placeName}</span>
+                        <span className={`place-name ${item.placeCode === 1 ? 'main-city-1' : 'main-city-2'}`}>{item.placeName}</span>
                         <span>{item.startDate} ~ {item.endDate}</span>
                     </div>
                 ))}
