@@ -124,6 +124,12 @@ a {
   width: 100%;
   overflow: scroll;
   padding: 0.5rem;
+  position: relative;
+}
+
+.calendar {
+  z-index: 2;
+  position: relative;
 }
 
 // Hidden checkbox to triger mobile nav
