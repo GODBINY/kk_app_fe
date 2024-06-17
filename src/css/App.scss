@@ -104,9 +104,9 @@ input[type="checkbox"] {
     &::before {
       opacity: 1;
       visibility: visible;
-      z-index: 5;
     }
     li {
+      z-index: 2;
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
