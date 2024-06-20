@@ -125,10 +125,10 @@ a {
   overflow: scroll;
   padding: 0.5rem;
   position: relative;
+  z-index: 1;
 }
 
 .calendar {
-  z-index: 0;
   position: relative;
 }
 

@@ -10,13 +10,19 @@ import Buckets from "./components/Home.jsx";
 import FreeBoard from "./components/Home.jsx";
 
 function App() {
+    let isShowNavbar = false;
     // const [menuChecked, setMenuChecked] = React.useState('false');
     // const changedMenuHandler = (e) => {
     //     console.log(e.target.value)
     //     setMenuChecked(!e.target.value)
     // }
-    let checkedHandler = (value) => {
-        console.log(value)
+    let checkedHandler = () => {
+        isShowNavbar = !isShowNavbar
+        let zIndex = 1;
+        if(isShowNavbar) {
+            zIndex = 0;
+        }
+        document.getElementsByClassName("content")[0].style.zIndex = zIndex;
     }
 
     return (
