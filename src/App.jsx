@@ -17,17 +17,17 @@ function App() {
     //     setMenuChecked(!e.target.value)
     // }
     let checkedHandler = () => {
+        let zIndex = 0;
         isShowNavbar = !isShowNavbar
-        let zIndex = 1;
         if(isShowNavbar) {
-            zIndex = 0;
+            zIndex = 2;
         }
-        document.getElementsByClassName("content")[0].style.zIndex = zIndex;
+        document.getElementsByClassName("gnbMenu")[0].style.zIndex = zIndex;
     }
 
     return (
             <div className="root-wrap">
-                <nav>
+                <nav className="gnbMenu">
                     <input type="checkbox" id="hamburger1" />
                     <label htmlFor="hamburger1" onClick={checkedHandler}> </label>
                     <ul className="nav-links">
