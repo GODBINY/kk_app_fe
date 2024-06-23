@@ -37,7 +37,8 @@ const Home = () => {
             <div className="d-day-title no-select">
                 <img
                     className="person-img no-select"
-                    src="/assets/images/IMG_1747.png"
+                    src="/assets/images/IMG_1747.PNG"
+
                 />
                 <div className="d-day-content no-select">
                     <div className="d-day-text">뀽<GoHeartFill className="heart" />콩</div>

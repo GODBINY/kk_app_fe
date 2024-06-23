@@ -1,56 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './css/App.scss';
 import { GoHeartFill } from "react-icons/go";
 import { DiAptana } from "react-icons/di";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import Days from "./components/Days.jsx";
 import Schedule from "./components/Home.jsx";
 import Buckets from "./components/Home.jsx";
 import FreeBoard from "./components/Home.jsx";
 
-function App() {
-    let isShowNavbar = false;
-    // const [menuChecked, setMenuChecked] = React.useState('false');
-    // const changedMenuHandler = (e) => {
-    //     console.log(e.target.value)
-    //     setMenuChecked(!e.target.value)
-    // }
-    let checkedHandler = () => {
-        let zIndex = 0;
-        isShowNavbar = !isShowNavbar
-        if(isShowNavbar) {
-            zIndex = 2;
-        }
-        document.getElementsByClassName("gnbMenu")[0].style.zIndex = zIndex;
-    }
+const App = () => {
+    const [isShowNavbar, setIsShowNavbar] = useState(false);
+
+    const checkedHandler = () => {
+        setIsShowNavbar(!isShowNavbar);
+    };
 
     return (
+        <Router>
             <div className="root-wrap">
-                <nav className="gnbMenu">
-                    <input type="checkbox" id="hamburger1" />
-                    <label htmlFor="hamburger1" onClick={checkedHandler}> </label>
+                <nav className="gnbMenu" style={{ zIndex: isShowNavbar ? 1 : 0 }}>
+                    <input type="checkbox" id="hamburger1" checked={isShowNavbar} onChange={checkedHandler} />
+                    <label htmlFor="hamburger1"> </label>
                     <ul className="nav-links">
-                        <li><a href="/"><GoHeartFill className="heart list" />  홈</a></li>
-                        <li><a href="/Days"><GoHeartFill className="heart list" />  우리 만난지..</a></li>
-                        <li><a href="/Schedule"><GoHeartFill className="heart list" />  우리의 일정</a></li>
-                        <li><a href="/Buckets"><GoHeartFill className="heart list" />  우리의 버킷리스트</a></li>
-                        <li><a href="/FreeBoard"><GoHeartFill className="heart list" />  우리의 금주 식단</a></li>
+                        <li><Link to="/"><GoHeartFill className="heart list" />  홈</Link></li>
+                        <li><Link to="/Days"><GoHeartFill className="heart list" />  우리 만난지..</Link></li>
+                        <li><Link to="/Schedule"><GoHeartFill className="heart list" />  우리의 일정</Link></li>
+                        <li><Link to="/Buckets"><GoHeartFill className="heart list" />  우리의 버킷리스트</Link></li>
+                        <li><Link to="/FreeBoard"><GoHeartFill className="heart list" />  우리의 금주 식단</Link></li>
                     </ul>
                     <DiAptana className="setting-icon" size={35} />
                 </nav>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path='/' element={<Home />} />
-                        <Route path='/Days' element={<Days />} />
-                        <Route path='/Schedule' element={<Schedule />} />
-                        <Route path='/Buckets' element={<Buckets />} />
-                        <Route path='/FreeBoard' element={<FreeBoard />} />
-                    </Routes>
-                </BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/Days' element={<Days />} />
+                    <Route path='/Schedule' element={<Schedule />} />
+                    <Route path='/Buckets' element={<Buckets />} />
+                    <Route path='/FreeBoard' element={<FreeBoard />} />
+                </Routes>
             </div>
-
+        </Router>
     );
-}
+};
 
 export default App;
