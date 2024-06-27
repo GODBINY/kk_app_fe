@@ -12,6 +12,7 @@ const Home = () => {
     let dDay = calculateDday();
     const [selectedDateList, setSelectedDateList] = useState([]);
     let datingDayList = [
+        { placeCode: 1, placeName: '대전', startDate: '2024-05-14', endDate: '2024-05-16' },
         { placeCode: 1, placeName: '대전', startDate: '2024-05-17', endDate: '2024-05-19' },
         { placeCode: 2, placeName: '성남', startDate: '2024-05-24', endDate: '2024-05-26' },
         { placeCode: 1, placeName: '대전', startDate: '2024-05-31', endDate: '2024-06-02' },
