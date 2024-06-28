@@ -77,7 +77,7 @@ const Home = () => {
                 </div>
                 <div className="normal-content no-select">
                     <ul>
-                        <li>우리뀽이 예비군, 이사 주간(24.06.17 ~ 24.06.23)</li>
+                        <li>뀽콩 홍콩여행 주간(24.06.28 ~ 24.07.02)</li>
                     </ul>
                 </div>
             </div>
@@ -87,8 +87,9 @@ const Home = () => {
                 </div>
                 <div className="normal-content no-select">
                     <ul>
-                        <li>예비군뀽이랑 뭐먹지 히히</li>
-                        <li>드디어 우리 서대전 코스트코도 갈 수 있는건가 히히</li>
+                        <li>완탕면</li>
+                        <li>딤섬</li>
+                        <li>토마토라면</li>
                     </ul>
                 </div>
             </div>
@@ -98,7 +99,7 @@ const Home = () => {
                 </div>
                 <div className="normal-content no-select">
                     <div className="check-lists no-select">
-                        <div><MdOutlineCheckBox /> 휴게소에서 알감자 사먹기</div>
+                        <div><MdOutlineCheckBox /> 일본 온천여행 가기</div>
                         <div><MdOutlineCheckBoxOutlineBlank /> 쟈가아리고 만들어먹기</div>
                         <div><MdOutlineCheckBoxOutlineBlank /> 가마치 통닭 바깥에서 치킨이랑 술마시기</div>
                     </div>
