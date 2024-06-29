@@ -89,7 +89,7 @@ const Home = () => {
                 </div>
                 <div className="normal-content no-select">
                     <ul>
-                        <li>완탕면</li>
+                        <li>회</li>
                         <li>딤섬</li>
                         <li>토마토라면</li>
                     </ul>
