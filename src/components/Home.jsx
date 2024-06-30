@@ -79,7 +79,7 @@ const Home = () => {
                 </div>
                 <div className="normal-content no-select">
                     <ul>
-                        <li>뀽콩 홍콩여행 주간(24.06.28 ~ 24.07.02)</li>
+                        <li>뀽콩 헬스 주간(24.07.02 ~ 24.07.07)</li>
                     </ul>
                 </div>
             </div>
