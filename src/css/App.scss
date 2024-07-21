@@ -22,7 +22,7 @@ a {
 }
 
 .nav-links {
-  display: block;
+  display: none;
   position: absolute;
   top: 55px;
   left: 0;
@@ -30,6 +30,7 @@ a {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  z-index: 50; // nav-links의 기본 z-index
   &::before {
     background: rgba(0, 0, 0, .5);
     content: '';
@@ -101,12 +102,13 @@ input[type="checkbox"] {
     }
   }
   &:checked ~ .nav-links {
+    display: block;
     &::before {
       opacity: 1;
       visibility: visible;
     }
     li {
-      z-index: 2;
+      z-index: 1001; // nav-links가 보일 때 가장 높은 z-index
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
@@ -163,6 +165,7 @@ label {
   display: block;
   height: auto;
   width: 100%;
+  position: relative;
   nav {
     background: #fff;
     border-bottom: 1px solid #ddd;
@@ -171,6 +174,16 @@ label {
     position: -webkit-sticky;
     top: 0px;
     margin-bottom: 10px;
-    z-index:1;
+    z-index: 1000; // gnbMenu의 z-index
   }
+}
+
+.gnbMenu {
+  position: relative;
+  z-index: 1000; // gnbMenu는 중간 z-index 값을 가집니다.
+}
+
+.mainContents {
+  position: relative;
+  z-index: 500; // mainContents는 기본 z-index
 }

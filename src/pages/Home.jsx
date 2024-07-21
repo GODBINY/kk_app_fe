@@ -26,6 +26,7 @@ const Home = () => {
         { placeCode: 4, placeName: '수원', startDate: '2024-07-06', endDate: '2024-07-06' },
         { placeCode: 1, placeName: '대전', startDate: '2024-07-07', endDate: '2024-07-08' },
         { placeCode: 2, placeName: '성남', startDate: '2024-07-12', endDate: '2024-07-14' },
+        { placeCode: 1, placeName: '대전', startDate: '2024-07-19', endDate: '2024-07-21' },
     ];
 
     const formatDay = (locale, date) => date.getDate();
@@ -47,7 +48,6 @@ const Home = () => {
                 <img
                     className="person-img no-select"
                     src="/assets/images/IMG_1747.PNG"
-
                 />
                 <div className="d-day-content no-select">
                     <div className="d-day-text">뀽<GoHeartFill className="heart" />콩</div>
