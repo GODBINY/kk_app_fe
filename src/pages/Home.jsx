@@ -82,7 +82,7 @@ const Home = () => {
                 </div>
                 <div className="normal-content no-select">
                     <ul>
-                        <li>뀽콩 헬스 주간(24.07.02 ~ 24.07.07)</li>
+                        <li>우리 곧 600일인데 뭐할까나 히히</li>
                     </ul>
                 </div>
             </div>
@@ -92,9 +92,9 @@ const Home = () => {
                 </div>
                 <div className="normal-content no-select">
                     <ul>
-                        <li>회</li>
-                        <li>딤섬</li>
-                        <li>토마토라면</li>
+                        <li>리조또</li>
+                        <li>소바</li>
+                        <li>지코바</li>
                     </ul>
                 </div>
             </div>
