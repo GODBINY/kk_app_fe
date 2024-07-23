@@ -104,9 +104,9 @@ const Home = () => {
                 </div>
                 <div className="normal-content no-select">
                     <div className="check-lists no-select">
-                        <div><MdOutlineCheckBox /> 일본 온천여행 가기</div>
+                        <div><MdOutlineCheckBoxOutlineBlank /> 일본 온천여행 가기</div>
                         <div><MdOutlineCheckBoxOutlineBlank /> 쟈가아리고 만들어먹기</div>
-                        <div><MdOutlineCheckBoxOutlineBlank /> 가마치 통닭 바깥에서 치킨이랑 술마시기</div>
+                        <div><MdOutlineCheckBox /> 가마치 통닭 바깥에서 치킨이랑 술마시기</div>
                     </div>
                 </div>
             </div>
