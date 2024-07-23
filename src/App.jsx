@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './css/App.scss';
 import { GoHeartFill } from "react-icons/go";
@@ -6,7 +6,7 @@ import { DiAptana } from "react-icons/di";
 import Home from "./pages/Home.jsx";
 import Days from "./pages/Days.jsx";
 import Schedule from "./pages/Home.jsx";
-import Buckets from "./pages/Home.jsx";
+import Buckets from "./pages/Buckets.jsx";
 import FreeBoard from "./pages/Home.jsx";
 
 const App = () => {
