@@ -5,7 +5,7 @@ import { GoHeartFill } from "react-icons/go";
 import { DiAptana } from "react-icons/di";
 import Home from "./pages/Home.jsx";
 import Days from "./pages/Days.jsx";
-import Schedule from "./pages/Home.jsx";
+import Schedule from "./pages/Schedule.jsx";
 import Buckets from "./pages/Buckets.jsx";
 import FreeBoard from "./pages/Home.jsx";
 
