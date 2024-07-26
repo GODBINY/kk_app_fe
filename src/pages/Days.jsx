@@ -7,6 +7,7 @@ const Days = () => {
     const title = ['500', '400', '300', '200', '100']
     const today = new Date().toLocaleDateString();
 
+
     // 각 디데이를 더한 날짜를 계산하는 함수
     const calculateFutureDate = (item) => {
         // 기준일인 2022년 12월 20일
@@ -29,7 +30,7 @@ const Days = () => {
                 />
                 <div className="overlay">
                     <div className="next-d-day">
-                        <div>600일까지 76일 남음</div>
+                        <div>600일까지 {subtractDate(today,'2024-08-10')}일 남음</div>
                         <div>2024.08.10(토)</div>
                     </div>
                 </div>
