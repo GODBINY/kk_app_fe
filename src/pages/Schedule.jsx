@@ -39,7 +39,7 @@ const Home = () => {
             <div>
                 {datingDayList.map((item, idx) => (
                     <div key={idx}>
-                        <span className={`place-name ${item.placeCode === 1 ? 'main-city-1' : 'main-city-2'}`}>{item.placeName}</span>
+                        <span className={`place-name main-city-${item.placeCode}`}>{item.placeName}</span>
                         <span>{item.startDate} ~ {item.endDate}</span>
                     </div>
                 ))}
