@@ -20,6 +20,7 @@ const Home = () => {
         { placeCode: 1, placeName: '대전', startDate: '2024-07-07', endDate: '2024-07-08' },
         { placeCode: 2, placeName: '성남', startDate: '2024-07-12', endDate: '2024-07-14' },
         { placeCode: 1, placeName: '대전', startDate: '2024-07-19', endDate: '2024-07-21' },
+        { placeCode: 2, placeName: '성남', startDate: '2024-07-26', endDate: '2024-07-28' },
     ];
 
     const formatDay = (locale, date) => date.getDate();
