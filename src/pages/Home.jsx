@@ -71,12 +71,19 @@ const Home = () => {
                     formatDay={formatDay}
                     onClickDay={clickCalendar}
                 />
-                {selectedDateList.map((item, idx) => (
-                    <div className="normal-content no-select" key={idx}>
-                        <span className={`place-name ${item.placeCode === 1 ? 'main-city-1' : 'main-city-2'}`}>{item.placeName}</span>
-                        <span>{item.startDate} ~ {item.endDate}</span>
+                {selectedDateList.length > 0 ? (
+                    selectedDateList.map((item, idx) => (
+                        <div className="normal-content no-select" key={idx}>
+                            <span className={`place-name main-city-${item.placeCode}`}>{item.placeName}</span>
+                            <span>{item.startDate} ~ {item.endDate}</span>
+                        </div>
+                    ))
+                ) : (
+                    <div className="normal-content no-select">
+                        <span className={`place-name main-city-3`}>뀽콩 못보는날</span>
+                        <span>힝 얼른 보자?</span>
                     </div>
-                ))}
+                )}
             </div>
             <div className="no-select">
                 <div className="app-title no-select">
