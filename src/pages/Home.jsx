@@ -1,5 +1,5 @@
 import '../css/Home.scss'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { GoHeartFill } from "react-icons/go";
 import { MdOutlineCheckBox } from "react-icons/md";
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
@@ -43,6 +43,10 @@ const Home = () => {
         setSelectedDateList(filteredDates);
         console.log(filteredDates);
     };
+
+    useEffect(() => {
+        clickCalendar(new Date());
+    }, []);
 
     return (
         <div className="content no-select">
@@ -105,7 +109,7 @@ const Home = () => {
                         <li>토욜아점 : 닭볶음탕+소바</li>
                         <li>토욜저녁 : 외식</li>
                         <li>일욜아점 : 삼겹살,김치볶음밥이나 오챠즈케,꼬시래기두부무침,미소시루</li>
-                         <li>*별미 : 고구마튀김, 단호박케이크</li>
+                        <li>*별미 : 고구마튀김, 단호박케이크</li>
                     </ul>
                 </div>
             </div>
