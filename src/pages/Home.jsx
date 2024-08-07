@@ -30,9 +30,9 @@ const Home = () => {
         { placeCode: 2, placeName: '성남', startDate: '2024-07-26', endDate: '2024-07-28' },
         { placeCode: 1, placeName: '대전', startDate: '2024-07-29', endDate: '2024-07-30' },
         { placeCode: 1, placeName: '대전', startDate: '2024-08-02', endDate: '2024-08-03' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-08-00', endDate: '2024-08-10' },
-        { placeCode: 4, placeName: '부산', startDate: '2024-08-00', endDate: '2024-08-10' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-08-10', endDate: '2024-08-11' },
+        { placeCode: 1, placeName: '대전', startDate: '2024-08-09', endDate: '2024-08-10' },
+        { placeCode: 4, placeName: '부산', startDate: '2024-08-10', endDate: '2024-08-11' },
+        { placeCode: 1, placeName: '대전', startDate: '2024-08-14', endDate: '2024-08-18' },
     ];
 
     const formatDay = (locale, date) => date.getDate();
