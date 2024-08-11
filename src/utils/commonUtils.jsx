@@ -17,6 +17,6 @@ export function stringToDate(stringValue){
     return dateValue;
 }
 
-export function changeTomillisecond(dateValue) {
+export function changeToMillisecond(dateValue) {
     return dateValue.valueOf();
 }

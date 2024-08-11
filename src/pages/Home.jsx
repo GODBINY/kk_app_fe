@@ -4,7 +4,7 @@ import { GoHeartFill } from "react-icons/go";
 import { MdOutlineCheckBox } from "react-icons/md";
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import { calculateDday } from '../utils/caculateDday.jsx'
-import { changeTomillisecond, stringToDate } from '../utils/commonUtils.jsx'
+import { changeToMillisecond, stringToDate } from '../utils/commonUtils.jsx'
 import Calendar from 'react-calendar';
 import '../css/Calendar.scss'
 
@@ -32,7 +32,7 @@ const Home = () => {
         { placeCode: 1, placeName: '대전', startDate: '2024-08-02', endDate: '2024-08-03' },
         { placeCode: 1, placeName: '대전', startDate: '2024-08-09', endDate: '2024-08-10' },
         { placeCode: 4, placeName: '부산', startDate: '2024-08-10', endDate: '2024-08-11' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-08-14', endDate: '2024-08-18' },
+        { placeCode: 1, placeName: '대전', startDate: '2024-08-11', endDate: '2024-08-11' },
     ];
 
     const formatDay = (locale, date) => date.getDate();
@@ -40,16 +40,17 @@ const Home = () => {
     const clickCalendar = (value) => {
         const filteredDates = datingDayList.filter((item) => {
             return (
-                changeTomillisecond(stringToDate(item.startDate)) <= changeTomillisecond(value) &&
-                changeTomillisecond(stringToDate(item.endDate)) >= changeTomillisecond(value)
+                changeToMillisecond(stringToDate(item.startDate)) <= changeToMillisecond(value) &&
+                changeToMillisecond(stringToDate(item.endDate)) >= changeToMillisecond(value)
             );
         });
         setSelectedDateList(filteredDates);
-        console.log(filteredDates);
     };
 
     useEffect(() => {
-        clickCalendar(new Date());
+        let today = new Date();
+        today.setHours(0, 0, 0, 0);
+        clickCalendar(today);
     }, []);
 
     return (
