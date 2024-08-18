@@ -100,9 +100,9 @@ const Home = () => {
                 </div>
                 <div className="normal-content no-select">
                     <ul>
-                        <li>우리 곧 600일인데 뭐할까나 히히</li>
+                        <li>우리 700일에는 뭐할까나 히히</li>
                     </ul>
-                </div>
+                </div>ㄴ
             </div>
             <div id="foodMenus" className="no-select">
                 <div className="app-title no-select">
@@ -110,11 +110,7 @@ const Home = () => {
                 </div>
                 <div className="normal-content no-select">
                     <ul>
-                        <li>금욜저녁 : 해물리조또+닭안심순살치킨</li>
-                        <li>토욜아점 : 닭볶음탕+소바</li>
-                        <li>토욜저녁 : 외식</li>
-                        <li>일욜아점 : 삼겹살,김치볶음밥이나 오챠즈케,꼬시래기두부무침,미소시루</li>
-                        <li>*별미 : 고구마튀김, 단호박케이크</li>
+                        <li>미정... </li>
                     </ul>
                 </div>
             </div>
