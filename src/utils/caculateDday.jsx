@@ -1,7 +1,7 @@
 import {subtractDate} from './commonUtils.jsx';
 
 // 사귄 날짜를 계산한다
-export const calculateDday = () => {
+export const calculatedDday = () => {
     const today = new Date();
     const startLoveDate = new Date('2022-12-20');
 
@@ -11,4 +11,4 @@ export const calculateDday = () => {
     return subtractDate(today,startLoveDate) + 1
 }
 
-export default calculateDday();
+export default calculatedDday();

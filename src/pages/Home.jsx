@@ -3,13 +3,13 @@ import { useState, useEffect } from 'react';
 import { GoHeartFill } from "react-icons/go";
 import { MdOutlineCheckBox } from "react-icons/md";
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
-import { calculateDday } from '../utils/caculateDday.jsx'
+import { calculatedDday } from '../utils/caculateDday.jsx'
 import { changeToMillisecond, stringToDate } from '../utils/commonUtils.jsx'
 import Calendar from 'react-calendar';
 import '../css/Calendar.scss'
 
 const Home = () => {
-    let dDay = calculateDday();
+    let dDay = calculatedDday();
     const [selectedDateList, setSelectedDateList] = useState([]);
     let datingDayList = [
         { placeCode: 1, placeName: '대전', startDate: '2024-05-14', endDate: '2024-05-16' },
