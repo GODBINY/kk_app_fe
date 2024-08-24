@@ -102,7 +102,7 @@ const Home = () => {
                 </div>
                 <div className="normal-content no-select">
                     <ul>
-                        <li>우리 700일에는 뭐할까나 히히</li>
+                        <li>(축)우리 뀽이가 3일 자고 가는 주 히히(하)</li>
                     </ul>
                 </div>
             </div>
