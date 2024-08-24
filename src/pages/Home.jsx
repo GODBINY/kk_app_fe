@@ -60,7 +60,7 @@ const Home = () => {
             <div className="d-day-title no-select">
                 <img
                     className="person-img no-select"
-                    src="/assets/images/IMG_1747.PNG"
+                    src="/assets/images/뀽_프로필_2.png"
                 />
                 <div className="d-day-content no-select">
                     <div className="d-day-text">뀽<GoHeartFill className="heart" />콩</div>
@@ -69,7 +69,7 @@ const Home = () => {
                 </div>
                 <img
                     className="person-img no-select"
-                    src="/assets/images/IMG_8314.jpeg"
+                    src="/assets/images/콩_프로필.png"
                 />
             </div>
             <div id="plans" className="no-select">
