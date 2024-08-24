@@ -28,7 +28,7 @@ const Days = () => {
             <div className="days-main-area">
                 <img
                     className="days-background-img"
-                    src="/assets/images/days_background_img.jpeg"
+                    src="/assets/images/뀽콩_배경사진.png"
                 />
                 <div className="overlay">
                     <div className="next-d-day">
