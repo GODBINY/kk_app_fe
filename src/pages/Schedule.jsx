@@ -1,6 +1,7 @@
 import '../css/Home.scss'
 import Calendar from 'react-calendar';
 import '../css/Calendar.scss'
+import '../css/Schedule.scss'
 
 const Home = () => {
 
@@ -36,9 +37,9 @@ const Home = () => {
                     />
                 </div>
             </div>
-            <div>
+            <div className="dating-day-list">
                 {datingDayList.map((item, idx) => (
-                    <div key={idx}>
+                    <div key={idx} className="dating-day-cont">
                         <span className={`place-name main-city-${item.placeCode}`}>{item.placeName}</span>
                         <span>{item.startDate} ~ {item.endDate}</span>
                     </div>
