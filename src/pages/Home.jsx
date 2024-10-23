@@ -102,7 +102,7 @@ const Home = () => {
                 </div>
                 <div className="normal-content no-select">
                     <ul>
-                        <li>(축)금토일월 뀽이랑 같이 있을 수 있는 주(하)</li>
+                        <li>(축)우리뀽이 시험 끝난 주(하)</li>
                     </ul>
                 </div>
             </div>
