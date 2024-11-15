@@ -112,9 +112,10 @@ const Home = () => {
                 </div>
                 <div className="normal-content no-select">
                     <ul>
-                        <li>들기름막국수</li>
-                        <li>라면+치킨텐더</li>
-                        <li>카레라이스?!</li>
+                        <li>금저녁 - 엽떡 만들어먹기</li>
+                        <li>토아점 - 치킨? 라면이랑 라면죽</li>
+                        <li>토저녁 - 오뎅바</li>
+                        <li>일아점 - 닭가슴살 닭곰탕, 매콤돼지사태조림</li>
                     </ul>
                 </div>
             </div>
