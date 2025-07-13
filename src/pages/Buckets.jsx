@@ -1,23 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/Buckets.scss';
-import bucketList from '../data/bucketList.json';
 import { MdOutlineCheckBox, MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
+import apiClient from '../api/apiClient';
 
 const Buckets = () => {
-        return (
-            <div className="bucket-list">
-                    {bucketList.map((item) => (
-                        <div key={item.idx}>
-                                {item.content.includes('O') ? (
-                                    <MdOutlineCheckBox />
-                                ) : (
-                                    <MdOutlineCheckBoxOutlineBlank />
-                                )}
-                                {item.content}
-                        </div>
-                    ))}
-            </div>
-        );
+    const [bucketLists, setBucketLists] = useState([]);
+
+    useEffect(() => {
+        const fetchBucketLists = async () => {
+            try {
+                const response = await apiClient.get('/bucket-lists');
+                setBucketLists(response.data);
+            } catch (error) {
+                console.error('Error fetching bucket lists:', error);
+            }
+        };
+
+        fetchBucketLists();
+    }, []);
+
+    return (
+        <div className="bucket-list">
+            {bucketLists.map((item) => (
+                <div key={item.id}>
+                    {item.isCompleted ? (
+                        <MdOutlineCheckBox />
+                    ) : (
+                        <MdOutlineCheckBoxOutlineBlank />
+                    )}
+                    {item.content}
+                </div>
+            ))}
+        </div>
+    );
 }
 
 export default Buckets;

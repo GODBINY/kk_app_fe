@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "node ./web.js",
+    "start": "vite",
     "build": "BUILD_PATH='../server/build' vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.12",
+    "axios": "^1.10.0",
     "bootstrap": "^5.3.3",
     "express": "^4.19.2",
     "prop-types": "^15.8.1",

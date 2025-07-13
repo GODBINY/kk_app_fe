@@ -1,26 +1,31 @@
+import React, { useState, useEffect } from 'react';
 import '../css/Days.scss'
 import { GoHeartFill } from "react-icons/go";
-import {calculatedDday} from '../utils/caculateDday.jsx'
+import { calculatedDday } from '../utils/caculateDday.jsx'
+import apiClient from '../api/apiClient';
 
 const Days = () => {
     let dDay = calculatedDday();
-    // const title = ['500', '400', '300', '200', '100']
+    const [dDays, setDDays] = useState([]);
     const today = new Date().toLocaleDateString();
-    console.log(multipleOf100Days())
-    console.log(title())
 
+    useEffect(() => {
+        const fetchDDays = async () => {
+            try {
+                const response = await apiClient.get('/ddays');
+                setDDays(response.data);
+            } catch (error) {
+                console.error('Error fetching ddays:', error);
+            }
+        };
 
-    // 각 디데이를 더한 날짜를 계산하는 함수
-    const calculateFutureDate = (item) => {
-        // 기준일인 2022년 12월 20일
-        const startDate = new Date('2022-12-20');
+        fetchDDays();
+    }, []);
 
-        // item일을 더한 날짜 계산
-        const futureDate = new Date(startDate.getTime());
-        futureDate.setDate(startDate.getDate() + Number(item));
-
-        // 계산된 날짜를 문자열로 반환
-        return futureDate.toLocaleDateString();
+    // 각 디데이를 더한 날짜를 계산하는 함수 (기존 로직 유지)
+    const calculateFutureDate = (itemDate) => {
+        const date = new Date(itemDate);
+        return date.toLocaleDateString();
     };
 
     return (
@@ -32,6 +37,7 @@ const Days = () => {
                 />
                 <div className="overlay">
                     <div className="next-d-day">
+                        {/* TODO: 다음 기념일 정보 백엔드에서 가져오기 */}
                         <div>600일까지 76일 남음</div>
                         <div>2024.08.10(토)</div>
                     </div>
@@ -46,14 +52,13 @@ const Days = () => {
                     </div>
                     <GoHeartFill className="heart"/>
                 </div>
-                {title().map((item,idx)=> {
-                    const pastDate = calculateFutureDate(Number(item));
+                {dDays.map((item) => {
                     return (
-                        <div className="days-sub-content" style={{ backgroundColor: getRandomPastelColor() }} key={idx}>
+                        <div className="days-sub-content" style={{ backgroundColor: getRandomPastelColor() }} key={item.id}>
                             <GoHeartFill className="heart"/>
                             <div className="d-day-area">
-                                <div>{item===0? "우리 사귀기 시작한 날" : `D+${item}`}</div>
-                                <div>{pastDate}</div>
+                                <div>{item.title}</div>
+                                <div>{calculateFutureDate(item.date)}</div>
                             </div>
                             <GoHeartFill className="heart"/>
                         </div>
@@ -71,22 +76,5 @@ const getRandomPastelColor = () => {
     const b = Math.floor((Math.random() * 25) + 230);
     return `rgb(${r},${g},${b})`;
 };
-
-// 100 단위로 떨어지는 디데이를 계산해주는 함수
-const multipleOf100Days = () => {
-    return calculatedDday() - calculatedDday()%100;
-};
-
-// 100 단위로 사귄 날짜 리스트화
-const title = () => {
-    let titleArray = []
-    if (multipleOf100Days()) {
-        for(let i=multipleOf100Days(); i>=0; i-=100){
-            console.log(i)
-            titleArray.push(i)
-        }
-    }
-    return titleArray
-}
 
 export default Days;

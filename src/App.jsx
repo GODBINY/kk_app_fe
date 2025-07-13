@@ -8,6 +8,7 @@ import Days from "./pages/Days.jsx";
 import Schedule from "./pages/Schedule.jsx";
 import Buckets from "./pages/Buckets.jsx";
 import FreeBoard from "./pages/Home.jsx";
+import SignUp from "./pages/SignUp.jsx"; // SignUp 컴포넌트 임포트
 
 const App = () => {
     const [isChecked, setIsChecked] = useState(false);
@@ -40,6 +41,7 @@ const App = () => {
                         <li><Link to="/Buckets"><GoHeartFill className="heart list" />  우리의 버킷리스트</Link></li>
                         <li><Link to="/FreeBoard"><GoHeartFill className="heart list" />  우리의 금주 식단</Link></li>
                         <li><Link to="/Album"><GoHeartFill className="heart list" />  우리의 앨범</Link></li>
+                        <li><Link to="/signup"><GoHeartFill className="heart list" />  회원가입</Link></li> {/* 회원가입 링크 추가 */}
                     </ul>
                     <DiAptana className="setting-icon" size={35} />
                 </nav>
@@ -50,6 +52,7 @@ const App = () => {
                         <Route path='/Schedule' element={<Schedule />} />
                         <Route path='/Buckets' element={<Buckets />} />
                         <Route path='/FreeBoard' element={<FreeBoard />} />
+                        <Route path='/signup' element={<SignUp />} /> {/* 회원가입 라우트 추가 */}
                     </Routes>
                 </div>
             </div>

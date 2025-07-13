@@ -7,54 +7,54 @@ import { calculatedDday } from '../utils/caculateDday.jsx'
 import { changeToMillisecond, stringToDate } from '../utils/commonUtils.jsx'
 import Calendar from 'react-calendar';
 import '../css/Calendar.scss'
+import apiClient from '../api/apiClient';
 
 const Home = () => {
     let dDay = calculatedDday();
     const [selectedDateList, setSelectedDateList] = useState([]);
-    let datingDayList = [
-        { placeCode: 1, placeName: '대전', startDate: '2024-05-14', endDate: '2024-05-16' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-05-17', endDate: '2024-05-19' },
-        { placeCode: 2, placeName: '성남', startDate: '2024-05-24', endDate: '2024-05-26' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-05-31', endDate: '2024-06-02' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-06-06', endDate: '2024-06-07' },
-        { placeCode: 2, placeName: '성남', startDate: '2024-06-14', endDate: '2024-06-16' },
-        { placeCode: 2, placeName: '성남', startDate: '2024-06-14', endDate: '2024-06-16' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-06-21', endDate: '2024-06-24' },
-        { placeCode: 4, placeName: '홍콩', startDate: '2024-06-30', endDate: '2024-07-02' },
-        { placeCode: 3, placeName: '수원', startDate: '2024-07-02', endDate: '2024-07-02' },
-        { placeCode: 3, placeName: '수원', startDate: '2024-07-04', endDate: '2024-07-04' },
-        { placeCode: 3, placeName: '수원', startDate: '2024-07-06', endDate: '2024-07-06' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-07-07', endDate: '2024-07-08' },
-        { placeCode: 2, placeName: '성남', startDate: '2024-07-12', endDate: '2024-07-14' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-07-19', endDate: '2024-07-21' },
-        { placeCode: 2, placeName: '성남', startDate: '2024-07-26', endDate: '2024-07-28' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-07-29', endDate: '2024-07-30' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-08-02', endDate: '2024-08-03' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-08-09', endDate: '2024-08-10' },
-        { placeCode: 4, placeName: '부산', startDate: '2024-08-10', endDate: '2024-08-11' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-08-11', endDate: '2024-08-11' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-08-14', endDate: '2024-08-18' },
-        { placeCode: 2, placeName: '성남', startDate: '2024-08-23', endDate: '2024-08-25' },
-        { placeCode: 2, placeName: '메롱', startDate: '2024-08-23', endDate: '2024-08-25' },
-    ];
+    const [datingDayList, setDatingDayList] = useState([]);
+    const [bucketLists, setBucketLists] = useState([]);
+
+    useEffect(() => {
+        const fetchSchedules = async () => {
+            try {
+                const response = await apiClient.get('/schedules');
+                setDatingDayList(response.data);
+            } catch (error) {
+                console.error('Error fetching schedules:', error);
+            }
+        };
+
+        const fetchBucketLists = async () => {
+            try {
+                const response = await apiClient.get('/bucket-lists');
+                setBucketLists(response.data);
+            } catch (error) {
+                console.error('Error fetching bucket lists:', error);
+            }
+        };
+
+        fetchSchedules();
+        fetchBucketLists();
+
+        let today = new Date();
+        today.setHours(0, 0, 0, 0);
+        clickCalendar(today);
+    }, []);
 
     const formatDay = (locale, date) => date.getDate();
 
     const clickCalendar = (value) => {
         const filteredDates = datingDayList.filter((item) => {
+            const startDate = new Date(item.startDate);
+            const endDate = new Date(item.endDate);
             return (
-                changeToMillisecond(stringToDate(item.startDate)) <= changeToMillisecond(value) &&
-                changeToMillisecond(stringToDate(item.endDate)) >= changeToMillisecond(value)
+                changeToMillisecond(startDate) <= changeToMillisecond(value) &&
+                changeToMillisecond(endDate) >= changeToMillisecond(value)
             );
         });
         setSelectedDateList(filteredDates);
     };
-
-    useEffect(() => {
-        let today = new Date();
-        today.setHours(0, 0, 0, 0);
-        clickCalendar(today);
-    }, []);
 
     return (
         <div className="content no-select">
@@ -85,9 +85,9 @@ const Home = () => {
                 />
                 {selectedDateList.length > 0 ? (
                     selectedDateList.map((item, idx) => (
-                        <div className="normal-content no-select" key={idx}>
+                        <div className="normal-content no-select" key={item.id}>
                             <span className={`place-name main-city-${item.placeCode}`}>{item.placeName}</span>
-                            <span>{item.startDate} ~ {item.endDate}</span>
+                            <span>{new Date(item.startDate).toLocaleDateString()} ~ {new Date(item.endDate).toLocaleDateString()}</span>
                         </div>
                     ))
                 ) : (
@@ -126,9 +126,16 @@ const Home = () => {
                 </div>
                 <div className="normal-content no-select">
                     <div className="check-lists no-select">
-                        <div><MdOutlineCheckBoxOutlineBlank /> 일본 온천여행 가기</div>
-                        <div><MdOutlineCheckBoxOutlineBlank /> 쟈가아리고 만들어먹기</div>
-                        <div><MdOutlineCheckBox /> 가마치 통닭 바깥에서 치킨이랑 술마시기</div>
+                        {bucketLists.map((item) => (
+                            <div key={item.id}>
+                                {item.isCompleted ? (
+                                    <MdOutlineCheckBox />
+                                ) : (
+                                    <MdOutlineCheckBoxOutlineBlank />
+                                )}
+                                {item.content}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

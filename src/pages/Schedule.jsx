@@ -2,28 +2,24 @@ import '../css/Home.scss'
 import Calendar from 'react-calendar';
 import '../css/Calendar.scss'
 import '../css/Schedule.scss'
+import React, { useState, useEffect } from 'react';
+import apiClient from '../api/apiClient';
 
-const Home = () => {
+const Schedule = () => {
+    const [datingDayList, setDatingDayList] = useState([]);
 
-    let datingDayList = [
-        { placeCode: 1, placeName: '대전', startDate: '2024-05-14', endDate: '2024-05-16' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-05-17', endDate: '2024-05-19' },
-        { placeCode: 2, placeName: '성남', startDate: '2024-05-24', endDate: '2024-05-26' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-05-31', endDate: '2024-06-02' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-06-06', endDate: '2024-06-07' },
-        { placeCode: 2, placeName: '성남', startDate: '2024-06-14', endDate: '2024-06-16' },
-        { placeCode: 2, placeName: '성남', startDate: '2024-06-14', endDate: '2024-06-16' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-06-21', endDate: '2024-06-24' },
-        { placeCode: 3, placeName: '홍콩', startDate: '2024-06-30', endDate: '2024-07-02' },
-        { placeCode: 4, placeName: '수원', startDate: '2024-07-02', endDate: '2024-07-02' },
-        { placeCode: 4, placeName: '수원', startDate: '2024-07-04', endDate: '2024-07-04' },
-        { placeCode: 4, placeName: '수원', startDate: '2024-07-06', endDate: '2024-07-06' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-07-07', endDate: '2024-07-08' },
-        { placeCode: 2, placeName: '성남', startDate: '2024-07-12', endDate: '2024-07-14' },
-        { placeCode: 1, placeName: '대전', startDate: '2024-07-19', endDate: '2024-07-21' },
-        { placeCode: 2, placeName: '성남', startDate: '2024-07-26', endDate: '2024-07-28' },
-        { placeCode: 2, placeName: '성남', startDate: '2024-07-26', endDate: '2024-07-28' },
-    ];
+    useEffect(() => {
+        const fetchSchedules = async () => {
+            try {
+                const response = await apiClient.get('/schedules');
+                setDatingDayList(response.data);
+            } catch (error) {
+                console.error('Error fetching schedules:', error);
+            }
+        };
+
+        fetchSchedules();
+    }, []);
 
     const formatDay = (locale, date) => date.getDate();
 
@@ -40,9 +36,9 @@ const Home = () => {
             </div>
             <div className="dating-day-list">
                 {datingDayList.map((item, idx) => (
-                    <div key={idx} className="dating-day-cont">
+                    <div key={item.id} className="dating-day-cont">
                         <span className={`place-name main-city-${item.placeCode}`}>{item.placeName}</span>
-                        <span>{item.startDate} ~ {item.endDate}</span>
+                        <span>{new Date(item.startDate).toLocaleDateString()} ~ {new Date(item.endDate).toLocaleDateString()}</span>
                     </div>
                 ))}
             </div>
@@ -50,4 +46,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Schedule;
